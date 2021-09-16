@@ -1,8 +1,8 @@
 //https://www.eclipse.org/paho/clients/js/
 
 function LED1_On() {
-	alert("led on");
-	console.log("led on");
+	//alert("led on");
+	//console.log("led on");
 	//document.getElementById("sensor").innerHTML="led on";
 	//message = new Paho.MQTT.Message("ON");
     	//message.destinationName = "jicordova.fie@unach.edu.ec/test";
@@ -10,8 +10,8 @@ function LED1_On() {
   
 }
 function LED1_Off(){	
-	alert("led off");
-	console.log("led off");
+	//alert("led off");
+	//console.log("led off");
 	//message = new Paho.MQTT.Message("OFF");
     	//message.destinationName = "jicordova.fie@unach.edu.ec/test";
     	//client.send(message);
