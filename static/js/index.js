@@ -3,7 +3,7 @@
 function LED1_On() {
 	//alert("led on");
 	//console.log("led on");
-	//document.getElementById("sensor").innerHTML="led on";
+	document.getElementById("sensor").innerHTML="led on";
 	//message = new Paho.MQTT.Message("ON");
     	//message.destinationName = "jicordova.fie@unach.edu.ec/test";
     	//client.send(message);
@@ -15,7 +15,7 @@ function LED1_Off(){
 	//message = new Paho.MQTT.Message("OFF");
     	//message.destinationName = "jicordova.fie@unach.edu.ec/test";
     	//client.send(message);
-	//document.getElementById("sensor").innerHTML="led off";
+	document.getElementById("sensor").innerHTML="led off";
 }
 
 
