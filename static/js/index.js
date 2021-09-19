@@ -4,7 +4,7 @@ function LED1_On() {
 	//alert("led on");
 	console.log("led on");
 	//document.getElementById("sensor").innerHTML="ENCENDIDO";
-	message = new Paho.MQTT.Message("ON");
+	message = new Paho.MQTT.Message("ACTIVAR");
     	message.destinationName = "jicordova.fie@unach.edu.ec/test";
     	client.send(message);
   
@@ -12,20 +12,20 @@ function LED1_On() {
 function LED1_Off(){	
 	//alert("led off");
 	console.log("led off");
-	message = new Paho.MQTT.Message("OFF");
+	message = new Paho.MQTT.Message("DESACTIVAR");
     	message.destinationName = "jicordova.fie@unach.edu.ec/test";
     	client.send(message);
 	//document.getElementById("sensor").innerHTML="APAGADO";
 }
 
-function LED_exit(){	
+//function LED_exit(){	
 	//alert("led off");
 	//console.log("led off");
 	//message = new Paho.MQTT.Message("OFF");
     	//message.destinationName = "jicordova.fie@unach.edu.ec/test";
     	//client.send(message);
-	document.getElementById("sensor").innerHTML="GO HOME";
-}
+//	document.getElementById("sensor").innerHTML="GO HOME";
+//}
 
 
 
