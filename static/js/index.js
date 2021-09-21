@@ -3,7 +3,7 @@
 function LED1_On() {
 	//alert("led on");
 	console.log("led on");
-	//document.getElementById("sensor").innerHTML="ENCENDIDO";
+	//document.getElementById("sensor").innerHTML="led on";
 	message = new Paho.MQTT.Message("ON");
     	message.destinationName = "jicordova.fie@unach.edu.ec/test";
     	client.send(message);
@@ -12,15 +12,19 @@ function LED1_On() {
 function LED1_Off(){	
 	//alert("led off");
 	console.log("led off");
-	//document.getElementById("sensor").innerHTML="APAGADO";
 	message = new Paho.MQTT.Message("OFF");
     	message.destinationName = "jicordova.fie@unach.edu.ec/test";
     	client.send(message);
+	//document.getElementById("sensor").innerHTML="led off";
 }
 
 
 
+
+
+
 // Create a client instance
+  //client = new Paho.MQTT.Client("postman.cloudmqtt.com", 14970);
   
   client = new Paho.MQTT.Client("maqiatto.com", 8883, "web_" + parseInt(Math.random() * 100, 10));
 
@@ -68,3 +72,4 @@ function LED1_Off(){
 	  document.getElementById("sensor").innerHTML=message.payloadString;
   }
   
+
