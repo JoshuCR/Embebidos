@@ -18,20 +18,9 @@ function LED1_Off(){
     	client.send(message);
 }
 
-//function LED_exit(){	
-	//alert("led off");
-	//console.log("led off");
-	//message = new Paho.MQTT.Message("OFF");
-    	//message.destinationName = "jicordova.fie@unach.edu.ec/test";
-    	//client.send(message);
-//	document.getElementById("sensor").innerHTML="GO HOME";
-//}
-
-
 
 
 // Create a client instance
-  //client = new Paho.MQTT.Client("postman.cloudmqtt.com", 14970);
   
   client = new Paho.MQTT.Client("maqiatto.com", 8883, "web_" + parseInt(Math.random() * 100, 10));
 
@@ -61,21 +50,21 @@ function LED1_Off(){
 	
   }
 
-  function doFail(e){
-    console.log(e);
+ // function doFail(e){
+   // console.log(e);
 	
-  }
+//  }
 
   // called when the client loses its connection
-  function onConnectionLost(responseObject) {
-    if (responseObject.errorCode !== 0) {
-      console.log("onConnectionLost:"+responseObject.errorMessage);
-    }
-  }
+  //function onConnectionLost(responseObject) {
+    //if (responseObject.errorCode !== 0) {
+      //console.log("onConnectionLost:"+responseObject.errorMessage);
+    //}
+  //}
 
   // called when a message arrives
-  function onMessageArrived(message) {
-    console.log("onMessageArrived:"+message.payloadString);
-	  document.getElementById("sensor").innerHTML=message.payloadString;
-  }
+  /function onMessageArrived(message) {
+   // console.log("onMessageArrived:"+message.payloadString);
+	//  document.getElementById("sensor").innerHTML=message.payloadString;
+  //}
   
