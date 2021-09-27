@@ -41,7 +41,7 @@ function LED1_Off(){
 
   // connect the client
   client.connect(options);
-   
+   //EDITANDO
   // called when the client connects
   function onConnect() {
     // Once a connection has been made, make a subscription and send a message.
@@ -52,6 +52,11 @@ function LED1_Off(){
     message.destinationName = "jicordova.fie@unach.edu.ec/test";//Tx-->Rx Rx<--Tx
     client.send(message);
 	
+	  
+	  client.subscribe("jicordova.fie@unach.edu.ec/test3");
+    message1 = new Paho.MQTT.Message(" ");
+    message1.destinationName = "jicordova.fie@unach.edu.ec/test3";//Tx-->Rx Rx<--Tx
+    client.send(message1);	
   }
 
   function doFail(e){
@@ -71,5 +76,10 @@ function LED1_Off(){
     console.log("onMessageArrived:"+message.payloadString);
 	  document.getElementById("sensor").innerHTML=message.payloadString;
   }
+ function onMessageArrived(message1) {
+    console.log("onMessageArrived:"+message1.payloadString);
+	  document.getElementById("sensor2").innerHTML=message1.payloadString;
+  }
+  
   
 
