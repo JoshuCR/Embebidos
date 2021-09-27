@@ -51,14 +51,16 @@ function LED1_Off(){
     message = new Paho.MQTT.Message(" ");
     message.destinationName = "jicordova.fie@unach.edu.ec/test";//Tx-->Rx Rx<--Tx
     client.send(message);
-	
-	  
-	  client.subscribe("jicordova.fie@unach.edu.ec/test3");
+
+  }
+ function onConnect() {
+    // Once a connection has been made, make a subscription and send a message.
+    console.log("Conectado...");
+  client.subscribe("jicordova.fie@unach.edu.ec/test3");
     message1 = new Paho.MQTT.Message(" ");
     message1.destinationName = "jicordova.fie@unach.edu.ec/test3";//Tx-->Rx Rx<--Tx
     client.send(message1);	
-  }
-
+	 }
   function doFail(e){
     console.log(e);
 	
