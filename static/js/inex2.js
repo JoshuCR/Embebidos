@@ -1,4 +1,10 @@
-
+ var options = {
+   useSSL: false,
+    userName: "jicordova.fie@unach.edu.ec",
+    password: "ironflight666",
+    onSuccess:onConnect,
+    onFailure:doFail
+  }
   // connect the client
   client.connect(options);
    
