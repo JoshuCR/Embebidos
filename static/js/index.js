@@ -82,8 +82,8 @@ function LED1_Off(){
   client = new Paho.MQTT.Client("maqiatto.com", 8883, "web_" + parseInt(Math.random() * 100, 10));
 
   // set callback handlers
-  client.onConnectionLost1 = onConnectionLost;
-  client.onMessageArrived1 = onMessageArrived;
+  client.onConnectionLost = onConnectionLost;
+  client.onMessageArrived = onMessageArrived;
   var options = {
    useSSL: false,
     userName: "jicordova.fie@unach.edu.ec",
@@ -113,14 +113,14 @@ function LED1_Off(){
   }
 
   // called when the client loses its connection
-  function onConnectionLost1(responseObject) {
+  function onConnectionLost(responseObject) {
     if (responseObject.errorCode !== 0) {
       console.log("onConnectionLost:"+responseObject.errorMessage);
     }
   }
 
   // called when a message arrives
-  function onMessageArrived1(message) {
+  function onMessageArrived(message) {
     console.log("onMessageArrived:"+message.payloadString);
 	  document.getElementById("sensor2").innerHTML=message.payloadString;
   }
