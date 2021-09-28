@@ -80,18 +80,3 @@ function LED1_Off(){
 
 
 
-  // called when the client loses its connection
-  function onConnectionLost(responseObject) {
-    if (responseObject.errorCode !== 0) {
-      console.log("onConnectionLost:"+responseObject.errorMessage);
-    }
-  }
-
-  // called when a message arrives
-  function onMessageArrived(message1) {
-    console.log("onMessageArrived:"+message1.payloadString);
-	  document.getElementById("sensor2").innerHTML=message1.payloadString;
-  }
-  
-
-
