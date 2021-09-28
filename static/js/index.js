@@ -17,15 +17,15 @@
    useSSL: false,
     userName: "jicordova.fie@unach.edu.ec",
     password: "ironflight666",
-    onSuccess:onConnect,
-    onFailure:doFail
+    onSuccess:onConnectx,
+    onFailure:doFailx
   }
 
   // connect the client
   client.connect(options);
    
   // called when the client connects
-  function onConnect() {
+  function onConnectx() {
     // Once a connection has been made, make a subscription and send a message.
     console.log("Conectado...");
 	
@@ -35,7 +35,7 @@
     client.send(message);
 	
   }
-  function doFail(e){
+  function doFailx(e){
     console.log(e);
 	
   }
