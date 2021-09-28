@@ -1,20 +1,4 @@
 
-// Create a client instance
-  //client = new Paho.MQTT.Client("postman.cloudmqtt.com", 14970);
-  var client;
-  client = new Paho.MQTT.Client("maqiatto.com", 8883, "web_" + parseInt(Math.random() * 100, 10));
-
-  // set callback handlers
-  client.onConnectionLost = onConnectionLost;
-  client.onMessageArrived = onMessageArrived;
-  var options = {
-   useSSL: false,
-    userName: "jicordova.fie@unach.edu.ec",
-    password: "ironflight666",
-    onSuccess:onConnect,
-    onFailure:doFail
-  }
-
   // connect the client
   client.connect(options);
    
