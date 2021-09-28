@@ -53,6 +53,24 @@ function LED1_Off(){
     client.send(message);
 
   }
+ function doFail(e){
+    console.log(e);
+	
+  }
+  // called when the client loses its connection
+  function onConnectionLost(responseObject) {
+    if (responseObject.errorCode !== 0) {
+      console.log("onConnectionLost:"+responseObject.errorMessage);
+    }
+  }
+
+  // called when a message arrives
+  function onMessageArrived(message) {
+    console.log("onMessageArrived:"+message.payloadString);
+	  document.getElementById("sensor").innerHTML=message.payloadString;
+  }
+
+
  function onConnect() {
     // Once a connection has been made, make a subscription and send a message.
     console.log("Conectado...");
@@ -66,17 +84,12 @@ function LED1_Off(){
 	
   }
 
-  // called when the client loses its connection
+
+ // called when the client loses its connection
   function onConnectionLost(responseObject) {
     if (responseObject.errorCode !== 0) {
       console.log("onConnectionLost:"+responseObject.errorMessage);
     }
-  }
-
-  // called when a message arrives
-  function onMessageArrived(message) {
-    console.log("onMessageArrived:"+message.payloadString);
-	  document.getElementById("sensor").innerHTML=message.payloadString;
   }
  function onMessageArrived(message1) {
     console.log("onMessageArrived:"+message1.payloadString);
