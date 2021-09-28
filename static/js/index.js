@@ -51,9 +51,14 @@ function LED1_Off(){
     message = new Paho.MQTT.Message("hola desde la web");
     message.destinationName = "jicordova.fie@unach.edu.ec/test";
     client.send(message);
-	  
+	
+  }
+  function onConnect() {
+    // Once a connection has been made, make a subscription and send a message.
+    console.log("Conectado...");
+	
     client.subscribe("jicordova.fie@unach.edu.ec/test3");
-    message = new Paho.MQTT.Message("holk");
+    message = new Paho.MQTT.Message("hola ");
     message.destinationName = "jicordova.fie@unach.edu.ec/test3";
     client.send(message);
 	
