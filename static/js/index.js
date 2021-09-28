@@ -91,8 +91,8 @@ function LED1_Off(){
       console.log("onConnectionLost:"+responseObject.errorMessage);
     }
   }
- function onMessageArrived(message1) {
-    console.log("onMessageArrived:"+message1.payloadString);
+ function onMessageArrived1(message1) {
+    console.log("onMessageArrived1:"+message1.payloadString);
 	  document.getElementById("sensor2").innerHTML=message1.payloadString;
   }
   
