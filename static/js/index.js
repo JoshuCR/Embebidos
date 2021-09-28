@@ -36,6 +36,7 @@ function LED1_Off(){
     userName: "jicordova.fie@unach.edu.ec",
     password: "ironflight666",
     onSuccess:onConnect,
+    onSuccess:onConnect2,
     onFailure:doFail
   }
 
@@ -53,7 +54,7 @@ function LED1_Off(){
     client.send(message);
 	
   }
-  function onConnect() {
+  function onConnect2() {
     // Once a connection has been made, make a subscription and send a message.
     console.log("Conectado...");
 	
