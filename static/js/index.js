@@ -103,9 +103,9 @@ function LED1_Off(){
     console.log("Conectado...");
 	
     client.subscribe("jicordova.fie@unach.edu.ec/test3");
-    message = new Paho.MQTT.Message("hola des");
-    message.destinationName = "jicordova.fie@unach.edu.ec/test3";
-    client.send(message);
+    messagex = new Paho.MQTT.Message("hola des");
+    messagex.destinationName = "jicordova.fie@unach.edu.ec/test3";
+    client.send(messagex);
 	
   }
   function doFail(e){
