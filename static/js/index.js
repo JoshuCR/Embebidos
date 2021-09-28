@@ -5,7 +5,7 @@ function LED1_On() {
 	console.log("led on");
 	//document.getElementById("sensor").innerHTML="led on";
 	message = new Paho.MQTT.Message("ON");
-    	message.destinationName = "jicordova.fie@unach.edu.ec/test1";
+    	message.destinationName = "lfrenteriax@hotmail.com/test1";
     	client.send(message);
   
 }
@@ -13,7 +13,7 @@ function LED1_Off(){
 	//alert("led off");
 	console.log("led off");
 	message = new Paho.MQTT.Message("OFF");
-    	message.destinationName = "jicordova.fie@unach.edu.ec/test1";
+    	message.destinationName = "lfrenteriax@hotmail.com/test1";
     	client.send(message);
 	//document.getElementById("sensor").innerHTML="led off";
 }
@@ -33,30 +33,32 @@ function LED1_Off(){
   client.onMessageArrived = onMessageArrived;
   var options = {
    useSSL: false,
-    userName: "jicordova.fie@unach.edu.ec",
-    password: "ironflight666",
+    userName: "lfrenteriax@hotmail.com",
+    password: "lfrenteriax",
     onSuccess:onConnect,
     onFailure:doFail
   }
 
   // connect the client
   client.connect(options);
-   //EDITANDO
+   
   // called when the client connects
   function onConnect() {
     // Once a connection has been made, make a subscription and send a message.
     console.log("Conectado...");
 	
     client.subscribe("jicordova.fie@unach.edu.ec/test");
-    message = new Paho.MQTT.Message(" ");
-    message.destinationName = "jicordova.fie@unach.edu.ec/test";//Tx-->Rx Rx<--Tx
+    message = new Paho.MQTT.Message("hola desde la web");
+    message.destinationName = "jicordova.fie@unach.edu.ec/test";
     client.send(message);
-
+	
   }
- function doFail(e){
+
+  function doFail(e){
     console.log(e);
 	
   }
+
   // called when the client loses its connection
   function onConnectionLost(responseObject) {
     if (responseObject.errorCode !== 0) {
@@ -69,32 +71,59 @@ function LED1_Off(){
     console.log("onMessageArrived:"+message.payloadString);
 	  document.getElementById("sensor").innerHTML=message.payloadString;
   }
+  
 
 
- function onConnect() {
+//PRUEBA
+
+// Create a client instance
+  //client = new Paho.MQTT.Client("postman.cloudmqtt.com", 14970);
+  
+  client = new Paho.MQTT.Client("maqiatto.com", 8883, "web_" + parseInt(Math.random() * 100, 10));
+
+  // set callback handlers
+  client.onConnectionLost1 = onConnectionLost;
+  client.onMessageArrived1 = onMessageArrived;
+  var options = {
+   useSSL: false,
+    userName: "jicordova.fie@unach.edu.ec",
+    password: "ironflight666",
+    onSuccess:onConnect,
+    onFailure:doFail
+  }
+
+  // connect the client
+  client.connect(options);
+   
+  // called when the client connects
+  function onConnect() {
     // Once a connection has been made, make a subscription and send a message.
     console.log("Conectado...");
-  client.subscribe("jicordova.fie@unach.edu.ec/test3");
-    message1 = new Paho.MQTT.Message(" ");
-    message1.destinationName = "jicordova.fie@unach.edu.ec/test3";//Tx-->Rx Rx<--Tx
-    client.send(message1);	
-	 }
+	
+    client.subscribe("jicordova.fie@unach.edu.ec/test3");
+    message = new Paho.MQTT.Message("holk");
+    message.destinationName = "jicordova.fie@unach.edu.ec/test3";
+    client.send(message);
+	
+  }
+
   function doFail(e){
     console.log(e);
 	
   }
 
-
- // called when the client loses its connection
-  function onConnectionLost(responseObject) {
+  // called when the client loses its connection
+  function onConnectionLost1(responseObject) {
     if (responseObject.errorCode !== 0) {
       console.log("onConnectionLost:"+responseObject.errorMessage);
     }
   }
- function onMessageArrived1(message1) {
-    console.log("onMessageArrived1:"+message1.payloadString);
-	  document.getElementById("sensor2").innerHTML=message1.payloadString;
+
+  // called when a message arrives
+  function onMessageArrived1(message) {
+    console.log("onMessageArrived:"+message.payloadString);
+	  document.getElementById("sensor2").innerHTML=message.payloadString;
   }
   
-  
+
 
