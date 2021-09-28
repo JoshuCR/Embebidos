@@ -5,7 +5,7 @@ function LED1_On() {
 	console.log("led on");
 	//document.getElementById("sensor").innerHTML="led on";
 	message = new Paho.MQTT.Message("ON");
-    	message.destinationName = "lfrenteriax@hotmail.com/test1";
+    	message.destinationName = "jicordova.fie@unach.edu.ec/test1";
     	client.send(message);
   
 }
@@ -13,7 +13,7 @@ function LED1_Off(){
 	//alert("led off");
 	console.log("led off");
 	message = new Paho.MQTT.Message("OFF");
-    	message.destinationName = "lfrenteriax@hotmail.com/test1";
+    	message.destinationName = "jicordova.fie@unach.edu.ec/test1";
     	client.send(message);
 	//document.getElementById("sensor").innerHTML="led off";
 }
@@ -33,8 +33,8 @@ function LED1_Off(){
   client.onMessageArrived = onMessageArrived;
   var options = {
    useSSL: false,
-    userName: "lfrenteriax@hotmail.com",
-    password: "lfrenteriax",
+    userName: "jicordova.fie@unach.edu.ec",
+    password: "ironflight666",
     onSuccess:onConnect,
     onFailure:doFail
   }
